@@ -80,10 +80,9 @@ class EventHandler(AssistantEventHandler):
         format_text1 = format_annotation(text)
         format_texta = text.value
         pattern = r'【\d+†source】'
-        format_text2 = re.sub(pattern, '', format_text1)
-        format_text = re.sub('[/d]', '', format_text2)
-        st.session_state.current_markdown.markdown(format_texta, True)
-        st.session_state.chat_log.append({"name": "assistant", "msg": format_texta})
+        format_text2 = re.sub(pattern, '', format_texta)
+        st.session_state.current_markdown.markdown(format_text2, True)
+        st.session_state.chat_log.append({"name": "assistant", "msg": format_text2})
 
     @override
     def on_tool_call_created(self, tool_call):
