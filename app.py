@@ -275,7 +275,7 @@ def load_chat_screen(assistant_id, assistant_title):
         uploaded_file = None
 
     st.title(assistant_title if assistant_title else "")
-        with st.chat_message("Assistant"):
+    with st.chat_message("Assistant"):
         st.write("Welcome, I am the Member Services Virtual Assistant!  Please ask me questions related to your membership or any other customer service-related inquiry!")
     user_msg = st.chat_input(
         "Enter Your Question or Comment Here...", on_submit=disable_form, disabled=st.session_state.in_progress
