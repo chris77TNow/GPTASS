@@ -79,7 +79,7 @@ class EventHandler(AssistantEventHandler):
     def on_text_done(self, text):
         format_text1 = format_annotation(text)
         pattern = r'【*】'
-        format_text = re.sub(pattern, '', message_text)
+        format_text = re.sub(pattern, '', format_text1)
         st.session_state.current_markdown.markdown(format_text, True)
         st.session_state.chat_log.append({"name": "assistant", "msg": format_text})
 
