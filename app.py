@@ -334,14 +334,7 @@ def main():
         load_chat_screen(single_agent_id, single_agent_title)
     else:
         st.error("No assistant configurations defined in environment variables.")
-def save_chat_log(filename="chat_log.json"):
-    """Save the chat log to a file."""
-    with open(filename, "w") as file:
-        json.dump(st.session_state.chat_log, file)
-    st.success(f"Chat log saved to {filename}")
 
-if not st.session_state.in_progress and st.session_state.chat_log:
-    save_chat_log()
 
 if __name__ == "__main__":
     main()
