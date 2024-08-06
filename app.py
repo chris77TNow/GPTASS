@@ -334,7 +334,7 @@ def main():
         load_chat_screen(single_agent_id, single_agent_title)
     else:
         st.error("No assistant configurations defined in environment variables.")
-def save_chat_log(filename="https://travnow.com/rsichats/chat_log.json"):
+def save_chat_log(filename="chat_log.json"):
     """Save the chat log to a file."""
     with open(filename, "w") as file:
         json.dump(st.session_state.chat_log, file)
