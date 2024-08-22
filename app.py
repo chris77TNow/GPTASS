@@ -81,7 +81,7 @@ class EventHandler(AssistantEventHandler):
         format_texta = text.value
         pattern = r'【\d+:\d+†source】'
         format_text2 = re.sub(pattern, '', format_texta)
-        st.session_state.current_markdown.markdown(format_text2, True)
+        st.session_state.current_markdown.markdown(format_text2, unsafe_allow_html = True)
         st.session_state.chat_log.append({"name": "assistant", "msg": format_text2})
 
     @override
